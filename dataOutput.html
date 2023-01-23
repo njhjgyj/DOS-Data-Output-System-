@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<style>
+
+    *{
+     margin: 0px;
+     padding: 0px;
+     }
+
+     body{
+         background-color: grey;
+     }
+     
+     #img2{
+         max-width: 100px;
+         border-radius: 50%;
+     }
+  
+      #dataOutputSystemImg{
+          max-width: 100px;
+          position: absolute;
+          left: 280px;
+          top: 130px;
+      }
+      
+      #div1{
+          display: grid;
+          place-items: center;
+      }
+      
+      #img3{
+          display: none;
+      }
+      
+      #contentShowSpan{
+          background-color: black;
+          font-size: 30;
+          max-width: 300px;
+          font-style: italic;
+          color: white;
+          margin: 20px;
+          height: 120px;
+          overflow-x: hidden;
+          overflow-y: scroll;
+          display: flex;
+          justify-content: center;
+          border-radius: 10px;
+      }
+      
+      #imgTag4{
+          max-width: 50px;
+          max-height: 30px;
+      }
+      
+      #sendBtn{
+          position: relative;
+          bottom: -5px;
+          margin: 10px;
+          cursor: pointer;
+          background-color: grey;
+          border: 2px solid black;
+          border-radius: 5px;
+          transition: 0.3s;
+          background-color: black;
+      }
+      
+      #sendBtn:hover{
+          background-color: grey;
+      }
+      
+      #inp1{
+          height: 40px;
+          font-size: 30;
+          font-style: italic;
+          color: white;
+          background-color: black;
+      }
+      
+      #inp1:hover{
+          transition: 0.2s;
+          background-color: grey;
+          border: 2px solid black;
+          border-radius: 10px;
+          
+      }
+      
+</style>
+
+<body>
+
+<div id="mainDiv">
+
+<div id="div1">
+
+<div id="div2">
+
+<img id="dataOutputSystemImg" src="Pictures/Eraser/dataOutputSystem.png" alt="" title="Data Ouput System"/>
+
+<img id="img1" class="imgTags" src="Download/19518.gif" alt="gif image ocean" /><br><br>
+
+</div><br /><br />  <!-- div2 ends here -->
+
+<img id="img2" class="imgTags" src="Download/images (2).jpeg" alt="github image" /><br><br>
+
+<img id="img3" class="imgTags" src="Download/GrippingReflectingBasenji-max-1mb.gif" alt="gif image loading" /><br><br>
+
+<span id="contentShowSpan">
+    <p> Made by Boost </p>
+</span><br><br /><br /><br />
+
+
+    <span id="spanTagForinpAndBtn">
+    <input type="text/submit/hidden/button/image" name="someText" id="inp1" placeholder="Type something on here" required> 
+    <button id="sendBtn"><img id="imgTag4" class="imgTags" src="Pictures/Eraser/sendBtn.png" alt="send image" /></button>
+    </span>
+    
+
+</div>  <!-- div1 ends here -->
+
+</div>  <!-- mainDiv ends here -->
+
+</body>
+
+<script>
+
+
+
+let getSendBtn = document.getElementById("sendBtn");
+
+getSendBtn.addEventListener("click", () => {
+    let getInputField = document.getElementById("inp1")
+.value.trim();
+    if(getInputField == "") {
+        alert("Please type something in input field");
+    } else if (getInputField.length < 15){
+        alert(`input field must contain 15 chracters there are total of ${getInputField.length} chracters`);
+    } else if (getInputField.length > 14) {
+        document.getElementById("img3").style.display = "block";
+        document.getElementById("contentShowSpan").innerText = "wait a sec...";
+        
+        setTimeout(function (){
+            document.getElementById("img3").style.display = "none";
+            document.getElementById("contentShowSpan").innerText = getInputField;
+            document.getElementById("inp1").value = "";
+        }, 2000);
+        
+    };
+    
+});
+
+
+
+
+
+
+
+
+
+    
+</script>
+
+</html>
